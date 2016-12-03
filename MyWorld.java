@@ -44,7 +44,8 @@ public class MyWorld extends World
         container container3 = new container();
         addObject(container3,260,500);
         boat boat = new boat();
-        addObject(boat,219,650);
-
+        addObject(boat,220,650);
+        container_red container_red = new container_red();
+        addObject(container_red,365,500);
     }
 }

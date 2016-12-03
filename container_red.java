@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class container extends Actor
+public class container_red extends Actor
 {
     /**
      * Act - do whatever the container1 wants to do. This method is called whenever
@@ -22,7 +22,7 @@ public class container extends Actor
  
 
     
-    public container()
+    public container_red()
      /*
       * Resizes the image
       */
