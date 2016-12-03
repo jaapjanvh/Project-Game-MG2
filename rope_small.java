@@ -15,7 +15,7 @@ public class rope_small extends Actor
     public void act()
     {
         checkInput();
-       test1();
+       //test1();
      
         
     }
@@ -26,7 +26,7 @@ public class rope_small extends Actor
     public rope_small()
     {
          GreenfootImage image = getImage();  
-        image.scale(1, 1);
+        image.scale(2, 2);
         setImage(image); 
     }
     
@@ -36,72 +36,32 @@ public class rope_small extends Actor
         if(Greenfoot.isKeyDown("right")  )
         {
             move(speed);
-            if (getOneIntersectingObject(container1.class) != null) 
-            {move(-speed);}
+            //if (getOneIntersectingObject(container1.class) != null) 
+            //{move(-speed);}
         }
-        else if(Greenfoot.isKeyDown("left"))
+        if(Greenfoot.isKeyDown("left"))
         {
             move(-speed);
-            if (getOneIntersectingObject(container1.class) != null) 
-            {move(speed);
-        }}
-     
-        
-    }
-    public void test1()
-    {
-      GreenfootImage image = getImage();
+            //if (getOneIntersectingObject(container1.class) != null) 
+            //{move(speed);
+              
+        }
+        GreenfootImage image = getImage();
         if (Greenfoot.isKeyDown("down")) 
         { 
             MyWorld world = (MyWorld)getWorld();
-            System.out.println("image: "+image.getHeight());
-            System.out.println("hook: "+world.hook.getY());
-            image.scale(1, world.hook.getY() );
-            setLocation(getX(),world.hook.getY()/2);
-            
+            image.scale(2, world.hook.getY() );
+            setLocation(getX(),world.hook.getY()/2+speed);
            
         }
         
         if (Greenfoot.isKeyDown("up")) 
         { 
            MyWorld world = (MyWorld)getWorld();
-            System.out.println("image: "+image.getHeight());
-            System.out.println("hook: "+world.hook.getY());
-            image.scale(1, world.hook.getY() );
-            setLocation(getX(),world.hook.getY()/2);
-        }  
+            image.scale(2, world.hook.getY() );
+            setLocation(getX(),world.hook.getY()/2+speed);
+        }
+     
+        
     }
-    
-    
-    
-    public void test()
-    
-   
-        {
-        Actor hook; 
-        hook = getOneIntersectingObject(hook.class); 
-        //getOneObjectAtOffset(0, 0, hook.class);
-        World world;
-            int hookx;
-            int hooky = 0;
-            world = getWorld();
-            hookx = hook.getX();
-            hooky = hook.getY();
-            GreenfootImage image = getImage();
-        if (Greenfoot.isKeyDown("down")) 
-        { 
-            
-            image.scale(5, (hooky));
-            //setImage(image);
-        }
-        else if (Greenfoot.isKeyDown("up")) 
-        { 
-            image.scale(5, (hooky));
-            setImage(image);
-        }
-        else
-        {
-            ;
-        }
-    }   
 }

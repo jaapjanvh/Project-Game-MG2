@@ -18,7 +18,7 @@ public class hook extends Actor
     public hook()
     {
         GreenfootImage image = getImage();  
-        image.scale(60, 60);
+        image.scale(22, 60);
         setImage(image);    
     } 
         
@@ -33,8 +33,9 @@ public class hook extends Actor
     
     
     private void checkInput()
-    {
+    {   
         speed = 2;
+        
         if(Greenfoot.isKeyDown("right")  )
         {
             move(speed);

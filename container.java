@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class container1 extends Actor
+public class container extends Actor
 {
     /**
      * Act - do whatever the container1 wants to do. This method is called whenever
@@ -16,12 +16,12 @@ public class container1 extends Actor
  
          public void act() {
              test();
-           
+            // temp();
         } 
  
 
     
-    public container1()
+    public container()
      /*
       * Resizes the image
       */
@@ -34,22 +34,27 @@ public class container1 extends Actor
     /*
       * When the hook touches the container and space is pressed and held, it will move with the hook until the spacebar is released.
       */
-   
         {
-        Actor hook; 
-        hook = getOneIntersectingObject(hook.class); 
-        //getOneObjectAtOffset(0, 0, hook.class);
-        if (hook != null  &&Greenfoot.isKeyDown("space") ) 
-        { 
-            World world;
-            int hookx;
-            int hooky;
-            world = getWorld();
-            hookx = hook.getX();
-            hooky = hook.getY();
-            setLocation(hookx,hooky+60);
+        MyWorld world = (MyWorld)getWorld();
+        if (getOneIntersectingObject(container.class) == null)
+        {
+            if (getOneIntersectingObject(hook.class) != null  &&Greenfoot.isKeyDown("space") ) 
+            { 
+               setLocation(world.hook.getX(),world.hook.getY()+70);
+            }
         }
-    } 
-
+        //else
+        //{
+        //    setLocation(getX(),getY());
+        //}
+    }
     
+    public void temp()
+    {
+        MyWorld world = (MyWorld)getWorld();
+    //if ( != null)
+    {
+        setLocation(getX(),getY());
+    }
+    }
 }
