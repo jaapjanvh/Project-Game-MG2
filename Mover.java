@@ -1,4 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.List;
 
 /**
  * Write a description of class container1 here.
@@ -6,31 +7,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class container_red extends Actor
+public class Mover extends Actor
 {
-    /**
-     * Act - do whatever the container1 wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-     
- 
-         public void act() {
-             c_move();
-             //test();
-            // temp();
-        } 
- 
-
-    
-    public container_red()
-     /*
-      * Resizes the image
-      */
-    {
-        GreenfootImage image = getImage();  
-        image.scale(100, 100);
-        setImage(image);    
-    }
+    private int acceleration = 0;
+    private int vSpeed = 0;
+    private int containerspeed = 0;  
+    private Class[] barrier = new Class[0];
     public void c_move()
      /*
       * When the hook touches the container and space is pressed and held, it will move with the hook until the spacebar is released.
@@ -42,6 +24,30 @@ public class container_red extends Actor
             { 
                setLocation(world.hook.getX(),world.hook.getY()+70);
             }
+    }
+    
+    public void doGravity()
+    {
+        if(vSpeed > 0) return;        
+        if(vSpeed <= 0)  vSpeed = -1;
+        setLocation(getX(), getY() + vSpeed);
+        vSpeed = vSpeed + acceleration;
+    
+    }
+   
+    protected void setMovementSpeed(int newSpeed)
+    {
+        containerspeed = newSpeed;
+    }
+    
+    protected void setBlockingClasses(Class[] c)
+    {
+        barrier = c;
+    }
+    
+    protected void setGravity(int g)
+    {
+        acceleration = g;
     }
     
     public void test()

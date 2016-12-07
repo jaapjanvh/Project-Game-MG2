@@ -1,77 +1,33 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class container1 here.
+ * Write a description of class containersub here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class container extends Actor
+public class Container extends Mover
 {
     /**
-     * Act - do whatever the container1 wants to do. This method is called whenever
+     * Act - do whatever the container wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-     
- 
-         public void act() {
-             c_move();
-             //test();
-            // temp();
-        } 
- 
-
     
-    public container()
-     /*
-      * Resizes the image
-      */
+    public Container()
     {
         GreenfootImage image = getImage();  
         image.scale(100, 100);
-        setImage(image);    
-    }
-    public void c_move()
-     /*
-      * When the hook touches the container and space is pressed and held, it will move with the hook until the spacebar is released.
-      */
-    
-    {
-        MyWorld world = (MyWorld)getWorld();
-         if (getOneIntersectingObject(hook.class) != null  &&Greenfoot.isKeyDown("space") ) 
-            { 
-               setLocation(world.hook.getX(),world.hook.getY()+70);
-            }
+        setImage(image);
+        
+        setGravity(2);
+        setMovementSpeed(5);
+        setBlockingClasses(new Class[]{Container.class});
     }
     
-    public void test()
-    /*
-      * testing with borders. Containers can go through each other. This should not be the case
-      */
-        {
-        MyWorld world = (MyWorld)getWorld();
-        if (getOneIntersectingObject(container.class) == null)
-        {
-            if (getOneIntersectingObject(hook.class) != null  &&Greenfoot.isKeyDown("space") ) 
-            { 
-               setLocation(world.hook.getX(),world.hook.getY()+70);
-            }
-        }
-        //else
-        //{
-        //    setLocation(getX(),getY());
-        //}
-    }
-    
-    public void temp()
-    /*
-     * container should not go through the "boat"
-     */
+    public void act() 
     {
-        MyWorld world = (MyWorld)getWorld();
-    //if ( != null)
-    {
-        setLocation(getX(),getY());
-    }
-    }
+        // Add your action code here.
+        doGravity();
+        //c_move();
+    }    
 }
