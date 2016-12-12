@@ -10,22 +10,25 @@ public class truck extends Actor
 {
     private int vTemp = 0;
     private int vRandom =  Greenfoot.getRandomNumber(3);
-    
-     public void act() 
-     {
-         spawn();
-         touchcontainer();
-        }
     /**
      * Act - do whatever the truck wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void spawn() 
+     public void act() 
+     {
+         load_vehicle();
+         touchcontainer();
+        }
+    
+    /**
+     * If a container touches the vehicle (this actor) it changes the actor to another color
+     */
+    public void load_vehicle() 
     {
         MyWorld world = (MyWorld)getWorld();
         GreenfootImage image = getImage();
         image.scale(22, 60);
-        System.out.println("Stuff" + vRandom);
+        //System.out.println("Stuff" + vRandom);
         if (vTemp == 0 && vRandom == 0) 
         {
           setImage("Truck_red.png");
@@ -47,6 +50,9 @@ public class truck extends Actor
         }
     }
     
+    /**
+     * If a container touches the vehicle (this actor) it deletes the container from the world.
+     */
     public void touchcontainer()
     {
        MyWorld world = (MyWorld)getWorld();
