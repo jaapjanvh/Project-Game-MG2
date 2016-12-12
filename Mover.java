@@ -22,7 +22,7 @@ public class Mover extends Actor
         MyWorld world = (MyWorld)getWorld();
          if (getOneIntersectingObject(hook.class) != null  &&Greenfoot.isKeyDown("space") ) 
             { 
-               setLocation(world.hook.getX(),world.hook.getY()+70);
+               setLocation(world.hook.getX(),world.hook.getY()+40);
             }
     }
     

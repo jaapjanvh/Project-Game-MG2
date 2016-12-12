@@ -16,7 +16,7 @@ public class Container extends Mover
     public Container()
     {
         GreenfootImage image = getImage();  
-        image.scale(100, 100);
+        image.scale(70, 70);
         setImage(image);
         
         setGravity(2);
