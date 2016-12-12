@@ -28,6 +28,6 @@ public class Container extends Mover
     {
         // Add your action code here.
         doGravity();
-        //c_move();
+        c_move();
     }    
 }

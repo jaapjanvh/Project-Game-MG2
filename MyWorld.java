@@ -38,16 +38,18 @@ public class MyWorld extends World
         crane crane = new crane();
         addObject(crane,271,25);
         addObject(new Container(), 60, 500);
-        /*
+
         Container Container2 = new Container();
         addObject(Container2,160,500);        
         Container Container3 = new Container();
         addObject(Container3,260,500);
-        */
+
         boat boat = new boat();
         addObject(boat,220,650);
         container_red container_red = new container_red();
         addObject(container_red,365,500);
+        truck truck = new truck();
+        addObject(truck,575,708);
     }
     
 }
