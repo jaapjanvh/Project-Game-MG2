@@ -7,13 +7,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 
+
 public class hook extends Actor
 {
     public static boolean vmg2_down;
     public static boolean vmg2_up;
     public static boolean vmg2_right;
     public static boolean vmg2_left;
-    public static int vmg2_speed = 3 ;
+    public static int vmg2_speed = 2 ;
     /**
      * Act - do whatever the hook wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -25,38 +26,43 @@ public class hook extends Actor
         image.scale(22, 60);
         setImage(image);    
     } 
-
+        
     public void act() {   
-        canmove();
-        checkInput();
-        maxmove();
+          canmove();
+          checkInput();
     }
+    
 
+
+    //&& getOneIntersectingObject(container1.class) == null
+    
+    
     private void checkInput()
     {   
         GreenfootImage image = getImage(); 
         if (vmg2_right == true || Greenfoot.isKeyDown("space"))
         {
-            if(Greenfoot.isKeyDown("right")  )
-            {
-                move(vmg2_speed);
-            }
+        if(Greenfoot.isKeyDown("right")  )
+        {
+            move(vmg2_speed);
+        }
         }
         if (vmg2_left == true || Greenfoot.isKeyDown("space"))
         {
-            if(Greenfoot.isKeyDown("left"))
-            {
-                move(-vmg2_speed);
-            }
+        if(Greenfoot.isKeyDown("left"))
+        {
+            move(-vmg2_speed);
+        }
         }
         if (vmg2_up == true || Greenfoot.isKeyDown("space"))
         {
-            if(Greenfoot.isKeyDown("up"))
-            {
-                setLocation(getX(), getY()-vmg2_speed*2);
-            }
+        if(Greenfoot.isKeyDown("up"))
+        {
+            setLocation(getX(), getY()-vmg2_speed*2);
         }
-        if ((vmg2_down == true || Greenfoot.isKeyDown("space")))
+        }
+
+        if (vmg2_down == true || Greenfoot.isKeyDown("space"))
         {
             if(Greenfoot.isKeyDown("down"))
             {
@@ -64,7 +70,6 @@ public class hook extends Actor
             }
         }
     }
-
     private void canmove()
     {
         GreenfootImage image = getImage(); 
@@ -100,12 +105,5 @@ public class hook extends Actor
         {
             vmg2_right = false;
         }
-    }
-    private void maxmove()
-    {
-        if (getX()>520) 
-        setLocation(520, getY());
-        if (getY()<40) 
-        setLocation(getX(),40);
     }
 }

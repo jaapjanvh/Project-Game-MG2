@@ -13,32 +13,24 @@ public class Container extends Mover
      * Act - do whatever the container wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    
+
     public Container()
     {
         GreenfootImage image = getImage();  
         image.scale(70, 70);
         setImage(image);
-        
+
         setGravity(2);
         setMovementSpeed(5);
         setBlockingClasses(new Class[]{Container.class});
     }
-    
+
     public void act() 
     {
         // Add your action code here.
         doGravity();
+        //c_move();
         c_move();
-        
+        canmove_container();
     }
-    
-    public void test()
-    {
-        for(int i=1; i<11; i++){
-            System.out.println("Count is: " + i);
-            
-         }
-    }
-
 }

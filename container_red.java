@@ -13,24 +13,28 @@ public class container_red extends Mover
      * Act - do whatever the container wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    
+
     public container_red()
     {
         GreenfootImage image = getImage();  
         image.scale(70, 70);
         setImage(image);
-        
+
         setGravity(2);
         setMovementSpeed(5);
         setBlockingClasses(new Class[]{container_red.class});
-        
+
     }
-    
+
     public void act() 
     {
-        // Add your action code here.
+        GreenfootImage image = getImage();
         doGravity();
-        c_move();
-        
+        //c_move();
+        a_move();
+        canmove_container();
+        //System.out.println(Mover.vmg2_containerdown);
+        //System.out.println(getOneObjectAtOffset(0, image.getHeight()/2, Mover.class));
+        //System.out.println(container_red.class );
     }
 }

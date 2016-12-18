@@ -8,4 +8,6 @@ comment2.params=
 comment2.target=rope_small()
 comment3.params=
 comment3.target=void\ checkInput()
-numComments=4
+comment4.params=
+comment4.target=void\ maxmove()
+numComments=5

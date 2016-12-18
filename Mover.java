@@ -13,71 +13,85 @@ public class Mover extends Actor
     private int vSpeed = 0;
     private int containerspeed = 0;  
     private Class[] barrier = new Class[0];
+    public static boolean vmg2_containerdown;
+    public static boolean vmg2_containerup;
+    public static boolean vmg2_containerright;
+    public static boolean vmg2_containerleft;    
     public void c_move()
-     /*
-      * When the hook touches the container and space is pressed and held, it will move with the hook until the spacebar is released.
-      */
-    
+    /*
+     * When the hook touches the container and space is pressed and held, it will move with the hook until the spacebar is released.
+     */
+
     {
         MyWorld world = (MyWorld)getWorld();
-         if (getOneIntersectingObject(hook.class) != null  &&Greenfoot.isKeyDown("space") ) 
-            { 
-               setLocation(world.hook.getX(),world.hook.getY()+40);
-            }
+        if (getOneIntersectingObject(hook.class) != null  &&Greenfoot.isKeyDown("space") ) 
+        { 
+            setLocation(world.hook.getX(),world.hook.getY()+40);
+        }
     }
-    
+
+    public void a_move()
+    /*
+     * When the hook touches the container and space is pressed and held, it will move with the hook until the spacebar is released.
+     */
+
+    {
+        MyWorld world = (MyWorld)getWorld();
+        if (Mover.vmg2_containerdown == true)
+        {
+            if (getOneIntersectingObject(hook.class) != null  &&Greenfoot.isKeyDown("space") ) 
+            { 
+                setLocation(world.hook.getX(),world.hook.getY()+40);
+            }
+        }
+    }
+
     public void doGravity()
     {
         if(vSpeed > 0) return;        
         if(vSpeed <= 0)  vSpeed = -1;
         setLocation(getX(), getY() + vSpeed);
         vSpeed = vSpeed + acceleration;
-    
+
     }
-   
+
     protected void setMovementSpeed(int newSpeed)
     {
         containerspeed = newSpeed;
     }
-    
+
     protected void setBlockingClasses(Class[] c)
     {
         barrier = c;
     }
-    
+
     protected void setGravity(int g)
     {
         acceleration = g;
     }
-    
-    public void test()
-    /*
-      * testing with borders. Containers can go through each other. This should not be the case
-      */
-        {
-        MyWorld world = (MyWorld)getWorld();
-        if (getOneIntersectingObject(Container.class) == null)
-        {
-            if (getOneIntersectingObject(hook.class) != null  &&Greenfoot.isKeyDown("space") ) 
-            { 
-               setLocation(world.hook.getX(),world.hook.getY()+70);
-            }
-        }
-        //else
-        //{
-        //    setLocation(getX(),getY());
-        //}
-    }
-    
+
     public void temp()
     /*
      * container should not go through the "boat"
      */
     {
         MyWorld world = (MyWorld)getWorld();
-    //if ( != null)
-    {
-        setLocation(getX(),getY());
+        //if ( != null)
+        {
+            setLocation(getX(),getY());
+        }
     }
+
+    public void canmove_container()
+    {
+        GreenfootImage image = getImage(); 
+        if (getOneObjectAtOffset(0, image.getHeight()/2,Mover.class) == null) 
+        {
+            vmg2_containerdown= true;
+        }
+        else
+        {
+            vmg2_containerdown = false;
+        }
     }
 }

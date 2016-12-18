@@ -74,7 +74,7 @@ public class MyWorld extends World
         container_green container_green2 = new container_green();
         addObject(container_green2,405,550);
         container_red container_red2 = new container_red();
-        addObject(container_red2,255,485);        
+        addObject(container_red2,255,465);        
         // added all the containers
     }
 }
