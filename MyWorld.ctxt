@@ -13,4 +13,6 @@ comment4.params=
 comment4.target=void\ counter()
 comment5.params=
 comment5.target=void\ count_containers()
-numComments=6
+comment6.params=
+comment6.target=void\ count_trucks()
+numComments=7

@@ -17,7 +17,8 @@ public class Mover extends Actor
     public static boolean vmg2_containerup;
     public static boolean vmg2_containerright;
     public static boolean vmg2_containerleft;
-    public boolean vmg2_hooked;
+    public boolean vmg2_right;
+    public boolean vmg2_left;    
     public void c_move()
     /*
      * When the hook touches the container and space is pressed and held, it will move with the hook until the spacebar is released.
@@ -30,22 +31,21 @@ public class Mover extends Actor
             setLocation(world.hook.getX(),world.hook.getY()+40);
         }
     }
-    
+
     public void mg2_MoveCont()
     {
         MyWorld world = (MyWorld)getWorld();
-        if (world.hook.vmg2_hooked2 == true && getOneIntersectingObject(hook.class) != null)
+        GreenfootImage image = getImage(); 
+        if (world.hook.vmg2_hooked == true && getOneIntersectingObject(hook.class) != null)
         {
-          setLocation(world.hook.getX(),world.hook.getY()+40);  
+            setLocation(world.hook.getX(),world.hook.getY()+40);  
+            //if (getOneObjectAtOffset(+image.getWidth()/2,0, null) == null && getOneObjectAtOffset(-image.getWidth()/2,0, null) == null)
+            //{
+            //    setLocation(world.hook.getX(),world.hook.getY()+40);  
+            //}
         }
     }
-    public void mg2_hooked()
-    {
-        if (getOneIntersectingObject(hook.class) != null)
-        {
-            vmg2_hooked = true;
-        }
-    }
+
     public void doGravity()
     {
         if(vSpeed > 0) return;        
@@ -70,18 +70,6 @@ public class Mover extends Actor
         acceleration = g;
     }
 
-    public void temp()
-    /*
-     * container should not go through the "boat"
-     */
-    {
-        MyWorld world = (MyWorld)getWorld();
-        //if ( != null)
-        {
-            setLocation(getX(),getY());
-        }
-    }
-
     public void canmove_container()
     {
         GreenfootImage image = getImage(); 
@@ -94,4 +82,26 @@ public class Mover extends Actor
             vmg2_containerdown = false;
         }
     }
+
+    public void mg2_ContCanMove()
+    {
+        GreenfootImage image = getImage(); 
+        if (getOneObjectAtOffset(+image.getWidth()/2,0, null) == null) 
+        {
+            vmg2_right= true;
+        }
+        else  
+        {
+            vmg2_right = false;
+        }
+        if (getOneObjectAtOffset(-image.getWidth()/2,0, null) == null) 
+        {
+            vmg2_left= true;
+        }
+        else  
+        {
+            vmg2_left = false;
+        }
+    }
+
 }

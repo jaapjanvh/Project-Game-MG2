@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class add_vehicle extends Actor
 {
-    public static int vmg2_addvehicle  = 2;
     MyWorld world = (MyWorld)getWorld();
     /**
      * Act - do whatever the add_vehicle wants to do. This method is called whenever
@@ -16,30 +15,22 @@ public class add_vehicle extends Actor
      */
     public void act() 
     {
-        //System.out.println(world);
-        addnewvehicel();
+        addnewvehice();
     }
-    /**
+        /**
      * Adds a vehicle to the world. 
      * Starts with 2. Then after a vehicle is removed, vmg2_test is set to 1 and it triggers this funtion to add a new vehicle.
      */
-    public void addnewvehicel()
+    public void addnewvehice()
     {
         MyWorld world = (MyWorld)getWorld();
         if (world.vmg2_bluecontainer > 0 || world.vmg2_redcontainer > 0 || world.vmg2_greencontainer > 0)
          {
-             if (vmg2_addvehicle == 2)
-             {
-                 vehicle vehicle = new vehicle();
-                 getWorld().addObject(vehicle,575,610);
-                 vmg2_addvehicle = 0;
-             }
-             if (vmg2_addvehicle == 1)
+                 if (world.vmg2_truck == 0)
                  {
                  vehicle vehicle = new vehicle();
                  getWorld().addObject(vehicle,575,610);
-                 vmg2_addvehicle = 0;
-                 }
+                }
         }
         else
         {

@@ -12,6 +12,7 @@ public class MyWorld extends World
     public int vmg2_redcontainer;
     public int vmg2_bluecontainer;
     public int vmg2_greencontainer;    
+    public int vmg2_truck;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -26,7 +27,9 @@ public class MyWorld extends World
     public void act()
     {
         count_containers();
+        count_trucks();
     }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -75,8 +78,8 @@ public class MyWorld extends World
         addObject(container_blue2,105,550);        
         container_blue container_blue3 = new container_blue();
         addObject(container_blue3,180,550);
-        container_red container_red = new container_red();
-        addObject(container_red,255,550);
+        //container_red container_red = new container_red();
+        //addObject(container_red,255,550);
         container_green container_green = new container_green();
         addObject(container_green,330,550);
         container_green container_green2 = new container_green();
@@ -90,5 +93,9 @@ public class MyWorld extends World
       vmg2_redcontainer = getObjects(container_red.class).size();
       vmg2_bluecontainer = getObjects(container_blue.class).size();
       vmg2_greencontainer = getObjects(container_green.class).size();
+    }
+    public void count_trucks()
+    {
+        vmg2_truck = getObjects(vehicle.class).size();
     }
 }

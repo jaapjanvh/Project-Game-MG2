@@ -14,7 +14,7 @@ public class hook extends Actor
     public static boolean vmg2_right= true;
     public static boolean vmg2_left= true;
     public static int vmg2_speed = 3 ;
-    public boolean vmg2_hooked2;    
+    public boolean vmg2_hooked;    
     /**
      * Act - do whatever the hook wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -32,8 +32,8 @@ public class hook extends Actor
         //canmove();
         checkInput();
         maxmove();
-        mg2_hooked2();
-        System.out.println("Red: " + world.vmg2_redcontainer + " ||Blue: " + world.vmg2_bluecontainer + " ||Green: " + world.vmg2_greencontainer);
+        mg2_hooked();
+        //System.out.println("Red: " + world.vmg2_redcontainer + " ||Blue: " + world.vmg2_bluecontainer + " ||Green: " + world.vmg2_greencontainer);
     }
 
     private void checkInput()
@@ -114,15 +114,15 @@ public class hook extends Actor
             setLocation(getX(),40);
     }
 
-    public void mg2_hooked2()
+    public void mg2_hooked()
     {
         if (getOneIntersectingObject(Mover.class) != null)
         {
-            vmg2_hooked2 = true;
+            vmg2_hooked = true;
         }
         else
         {
-            vmg2_hooked2 = false;
+            vmg2_hooked = false;
         }
     }
 }

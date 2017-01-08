@@ -42,7 +42,7 @@ public class vehicle extends add_vehicle
         {
             if (vRandom == 0) 
               {  
-               setImage("Truck_red.png"); 
+               setImage("Truck_red2.png"); 
                vColor = "red";
                if (vColor == container_red.vmg2_Red && red != null)
                {
@@ -51,7 +51,7 @@ public class vehicle extends add_vehicle
             }
             if (vRandom == 1) 
               {
-               setImage("Truck_blue.png");
+               setImage("Truck_blue2.png");
                vColor = "blue";
                if (vColor == container_blue.vmg2_Blue && blue != null)
                {
@@ -61,7 +61,7 @@ public class vehicle extends add_vehicle
             }
             if (vRandom == 2) 
               {     
-               setImage("Truck_green.png");
+               setImage("Truck_green2.png");
                vColor = "green";
                if (vColor == container_green.vmg2_Green && green != null)
                {
@@ -75,7 +75,7 @@ public class vehicle extends add_vehicle
         {
              if (vRandom1 == 0) 
               {  
-               setImage("Truck_red.png"); 
+               setImage("Truck_red2.png"); 
                vColor = "red";
                if (vColor == container_red.vmg2_Red && red != null)
                {
@@ -85,7 +85,7 @@ public class vehicle extends add_vehicle
             }
             if (vRandom1 == 1) 
               {
-               setImage("Truck_blue.png");
+               setImage("Truck_blue2.png");
                vColor = "blue";
                if (vColor == container_blue.vmg2_Blue && blue != null)
                {
@@ -98,7 +98,7 @@ public class vehicle extends add_vehicle
         {
             if (vRandom1 == 0) 
               {  
-               setImage("Truck_red.png"); 
+               setImage("Truck_red2.png"); 
                vColor = "red";
                if (vColor == container_red.vmg2_Red && red != null)
                {
@@ -108,7 +108,7 @@ public class vehicle extends add_vehicle
             }
             if (vRandom1 == 1) 
               {
-               setImage("Truck_green.png");
+               setImage("Truck_green2.png");
                vColor = "green";
                if (vColor == container_green.vmg2_Green && green != null)
                {
@@ -121,7 +121,7 @@ public class vehicle extends add_vehicle
         {
             if (vRandom1 == 0) 
               {  
-               setImage("Truck_green.png"); 
+               setImage("Truck_green2.png"); 
                vColor = "green";
                if (vColor == container_green.vmg2_Green && green != null)
                {
@@ -131,7 +131,7 @@ public class vehicle extends add_vehicle
             }
             if (vRandom1 == 1) 
               {
-               setImage("Truck_blue.png");
+               setImage("Truck_blue2.png");
                vColor = "blue";
                     if (vColor == container_blue.vmg2_Blue && blue != null)
                     {
@@ -141,7 +141,7 @@ public class vehicle extends add_vehicle
         }
         else if (world.vmg2_bluecontainer > 0 && world.vmg2_redcontainer == 0 && world.vmg2_greencontainer == 0)
         {
-               setImage("Truck_blue.png");
+               setImage("Truck_blue2.png");
                vColor = "blue";
                     if (vColor == container_blue.vmg2_Blue && blue != null)
                     {
@@ -150,7 +150,7 @@ public class vehicle extends add_vehicle
         }
         else if (world.vmg2_bluecontainer == 0 && world.vmg2_redcontainer > 0 && world.vmg2_greencontainer == 0)
         {
-               setImage("Truck_red.png");
+               setImage("Truck_red2.png");
                vColor = "red";
                     if (vColor == container_red.vmg2_Red && red != null)
                     {
@@ -159,7 +159,7 @@ public class vehicle extends add_vehicle
         }
         else if (world.vmg2_bluecontainer == 0 && world.vmg2_redcontainer == 0 && world.vmg2_greencontainer > 0)
         {
-               setImage("Truck_green.png");
+               setImage("Truck_green2.png");
                vColor = "green";
                     if (vColor == container_green.vmg2_Green && green != null)
                     {
@@ -178,7 +178,6 @@ public class vehicle extends add_vehicle
          {  
           getWorld().removeObject(b);
           getWorld().removeObject(this);
-          add_vehicle.vmg2_addvehicle = 1;
        }
      }
     

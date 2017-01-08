@@ -13,5 +13,5 @@ comment4.target=void\ canmove()
 comment5.params=
 comment5.target=void\ maxmove()
 comment6.params=
-comment6.target=void\ mg2_hooked2()
+comment6.target=void\ mg2_hooked()
 numComments=7
