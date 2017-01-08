@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Container extends Mover
+public class container_blue extends Mover
 {
     public static String vmg2_Blue = "blue";
     /**
@@ -14,7 +14,7 @@ public class Container extends Mover
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
 
-    public Container()
+    public container_blue()
     {
         GreenfootImage image = getImage();  
         image.scale(70, 70);
@@ -22,7 +22,7 @@ public class Container extends Mover
 
         setGravity(2);
         setMovementSpeed(5);
-        setBlockingClasses(new Class[]{Container.class});
+        setBlockingClasses(new Class[]{container_blue.class});
     }
 
     public void act() 
@@ -30,7 +30,6 @@ public class Container extends Mover
         // Add your action code here.
         doGravity();
         //c_move();
-        c_move();
-        canmove_container();
+        mg2_MoveCont();
     }
 }

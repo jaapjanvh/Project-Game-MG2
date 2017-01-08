@@ -24,15 +24,13 @@ public class container_green extends Mover
         setMovementSpeed(5);
         setBlockingClasses(new Class[]{container_green.class});
     }
-    
     public void act() 
     {
         // Add your action code here.
         doGravity();
-        c_move();
-        
+        //c_move();
+        mg2_MoveCont();
     }
-    
     public void test()
     {
         for(int i=1; i<11; i++){

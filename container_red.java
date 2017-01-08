@@ -31,10 +31,7 @@ public class container_red extends Mover
         GreenfootImage image = getImage();
         doGravity();
         //c_move();
-        a_move();
-        canmove_container();
-        //System.out.println(Mover.vmg2_containerdown);
-        //System.out.println(getOneObjectAtOffset(0, image.getHeight()/2, Mover.class));
-        //System.out.println(container_red.class );
+        mg2_MoveCont();
+
     }
 }

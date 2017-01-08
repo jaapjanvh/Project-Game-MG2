@@ -9,11 +9,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class hook extends Actor
 {
-    public static boolean vmg2_down;
-    public static boolean vmg2_up;
-    public static boolean vmg2_right;
-    public static boolean vmg2_left;
+    public static boolean vmg2_down = true;
+    public static boolean vmg2_up = true;
+    public static boolean vmg2_right= true;
+    public static boolean vmg2_left= true;
     public static int vmg2_speed = 3 ;
+    public boolean vmg2_hooked2;    
     /**
      * Act - do whatever the hook wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -27,9 +28,12 @@ public class hook extends Actor
     } 
 
     public void act() {   
-        canmove();
+        MyWorld world = (MyWorld)getWorld();
+        //canmove();
         checkInput();
         maxmove();
+        mg2_hooked2();
+        System.out.println("Red: " + world.vmg2_redcontainer + " ||Blue: " + world.vmg2_bluecontainer + " ||Green: " + world.vmg2_greencontainer);
     }
 
     private void checkInput()
@@ -68,7 +72,7 @@ public class hook extends Actor
     private void canmove()
     {
         GreenfootImage image = getImage(); 
-        if (getOneObjectAtOffset(0, image.getHeight()/2, Mover.class) == null) 
+        if (getOneObjectAtOffset(0, image.getHeight()/2, null) == null) 
         {
             vmg2_down= true;
         }
@@ -76,7 +80,7 @@ public class hook extends Actor
         {
             vmg2_down = false;
         }
-        if (getOneObjectAtOffset(0, -image.getHeight()/2, Mover.class) == null) 
+        if (getOneObjectAtOffset(0, -image.getHeight()/2, null) == null) 
         {
             vmg2_up= true;
         }
@@ -84,7 +88,7 @@ public class hook extends Actor
         {
             vmg2_up = false;
         }
-        if (getOneObjectAtOffset(-image.getWidth()/2,0, Mover.class) == null) 
+        if (getOneObjectAtOffset(-image.getWidth()/2,0, null) == null) 
         {
             vmg2_left= true;
         }
@@ -92,7 +96,7 @@ public class hook extends Actor
         {
             vmg2_left = false;
         }
-        if (getOneObjectAtOffset(+image.getWidth()/2,0, Mover.class) == null) 
+        if (getOneObjectAtOffset(+image.getWidth()/2,0, null) == null) 
         {
             vmg2_right= true;
         }
@@ -101,11 +105,24 @@ public class hook extends Actor
             vmg2_right = false;
         }
     }
+
     private void maxmove()
     {
         if (getX()>520) 
-        setLocation(520, getY());
+            setLocation(520, getY());
         if (getY()<40) 
-        setLocation(getX(),40);
+            setLocation(getX(),40);
+    }
+
+    public void mg2_hooked2()
+    {
+        if (getOneIntersectingObject(Mover.class) != null)
+        {
+            vmg2_hooked2 = true;
+        }
+        else
+        {
+            vmg2_hooked2 = false;
+        }
     }
 }

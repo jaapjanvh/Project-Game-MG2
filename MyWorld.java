@@ -9,8 +9,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     public hook hook;
-    public int v_test = 1;
-    //public Container Container;
+    public int vmg2_redcontainer;
+    public int vmg2_bluecontainer;
+    public int vmg2_greencontainer;    
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -20,8 +21,12 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1280, 750, 1); 
         prepare();
+        
     }
-
+    public void act()
+    {
+        count_containers();
+    }
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
@@ -33,9 +38,9 @@ public class MyWorld extends World
         //        hook.setLocation(731,76);        
         addObject(hook,90,60);
         rope_small rope_small = new rope_small();
-        addObject(rope_small,98,0);
-        rope_small rope_small2 = new rope_small();
-        addObject(rope_small2,82,0);
+        addObject(rope_small,90,0);
+        //rope_small rope_small2 = new rope_small();
+        //addObject(rope_small2,82,0);
         crane crane = new crane();
         addObject(crane,271,25);
         boat boat = new boat();
@@ -57,16 +62,19 @@ public class MyWorld extends World
         //System.out.println(v_test);
         add_vehicle add_vehicle = new add_vehicle();
         addObject(add_vehicle,25,725);
+
+        MG2_HELP mg2_help = new MG2_HELP();
+        addObject(mg2_help,1265,25);
     }
     
     public void counter()
     {
              // Adding containers to world
-        addObject(new Container(), 35, 550);
-        Container Container2 = new Container();
-        addObject(Container2,105,550);        
-        Container Container3 = new Container();
-        addObject(Container3,180,550);
+        addObject(new container_blue(), 35, 550);
+        container_blue container_blue2 = new container_blue();
+        addObject(container_blue2,105,550);        
+        container_blue container_blue3 = new container_blue();
+        addObject(container_blue3,180,550);
         container_red container_red = new container_red();
         addObject(container_red,255,550);
         container_green container_green = new container_green();
@@ -76,5 +84,11 @@ public class MyWorld extends World
         container_red container_red2 = new container_red();
         addObject(container_red2,255,465);        
         // added all the containers
+    }
+    public void count_containers()
+    {
+      vmg2_redcontainer = getObjects(container_red.class).size();
+      vmg2_bluecontainer = getObjects(container_blue.class).size();
+      vmg2_greencontainer = getObjects(container_green.class).size();
     }
 }

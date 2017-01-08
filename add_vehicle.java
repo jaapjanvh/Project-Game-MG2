@@ -9,12 +9,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class add_vehicle extends Actor
 {
     public static int vmg2_addvehicle  = 2;
+    MyWorld world = (MyWorld)getWorld();
     /**
      * Act - do whatever the add_vehicle wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
+        //System.out.println(world);
         addnewvehicel();
     }
     /**
@@ -23,7 +25,8 @@ public class add_vehicle extends Actor
      */
     public void addnewvehicel()
     {
-         if (vehicle.v_blue > 0 || vehicle.v_red > 0 || vehicle.v_green > 0)
+        MyWorld world = (MyWorld)getWorld();
+        if (world.vmg2_bluecontainer > 0 || world.vmg2_redcontainer > 0 || world.vmg2_greencontainer > 0)
          {
              if (vmg2_addvehicle == 2)
              {

@@ -73,8 +73,8 @@ public class rope_small extends Actor
     }
     private void maxmove()
     {
-        if (getX()>530) 
-        setLocation(530, getY());
+        if (getX()>520) 
+        setLocation(520, getY());
         if (getY()<40) 
         setLocation(getX(),40);
     }

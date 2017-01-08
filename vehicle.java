@@ -12,9 +12,9 @@ public class vehicle extends add_vehicle
     public int vRandom = Greenfoot.getRandomNumber(3);
     public int vRandom1 = Greenfoot.getRandomNumber(2);    
     private String vColor = "blank";
-    public static int v_blue = 3;
-    public static int v_red = 2;
-    public static int v_green = 2;
+    //public static int world.vmg2_bluecontainer = 3;
+    //public static int world.vmg2_redcontainer = 2;
+    //public static int world.vmg2_greencontainer = 2;
     GreenfootImage image = getImage();
      /**
      * Act - do whatever the vehicle wants to do. This method is called whenever
@@ -32,12 +32,13 @@ public class vehicle extends add_vehicle
      {
         Actor red = getOneIntersectingObject(container_red.class);
         Actor green = getOneIntersectingObject(container_green.class);
-        Actor blue = getOneIntersectingObject(Container.class);
+        Actor blue = getOneIntersectingObject(container_blue.class);
+        MyWorld world = (MyWorld)getWorld();
         /**
          * If there is still a container in every color, set random colored truck
          * 
          */
-        if (v_blue > 0 && v_red > 0 && v_green > 0)
+        if (world.vmg2_bluecontainer > 0 && world.vmg2_redcontainer > 0 && world.vmg2_greencontainer > 0)
         {
             if (vRandom == 0) 
               {  
@@ -46,17 +47,15 @@ public class vehicle extends add_vehicle
                if (vColor == container_red.vmg2_Red && red != null)
                {
                  touchcontainer();
-                 v_red = v_red-1;
                }
             }
             if (vRandom == 1) 
               {
                setImage("Truck_blue.png");
                vColor = "blue";
-               if (vColor == Container.vmg2_Blue && blue != null)
+               if (vColor == container_blue.vmg2_Blue && blue != null)
                {
                  touchcontainer();
-                 v_blue = v_blue-1;
                }
               
             }
@@ -67,13 +66,12 @@ public class vehicle extends add_vehicle
                if (vColor == container_green.vmg2_Green && green != null)
                {
                  touchcontainer();
-                 v_green = v_green-1;
                }
               
             }
 
         }
-        else if (v_blue > 0 && v_red > 0 && v_green == 0)
+        else if (world.vmg2_bluecontainer > 0 && world.vmg2_redcontainer > 0 && world.vmg2_greencontainer == 0)
         {
              if (vRandom1 == 0) 
               {  
@@ -82,7 +80,6 @@ public class vehicle extends add_vehicle
                if (vColor == container_red.vmg2_Red && red != null)
                {
                  touchcontainer();
-                 v_red = v_red-1;
                }
               
             }
@@ -90,15 +87,14 @@ public class vehicle extends add_vehicle
               {
                setImage("Truck_blue.png");
                vColor = "blue";
-               if (vColor == Container.vmg2_Blue && blue != null)
+               if (vColor == container_blue.vmg2_Blue && blue != null)
                {
                  touchcontainer();
-                 v_blue = v_blue-1;
                }
               
             }
         }
-        else if (v_blue == 0 && v_red > 0 && v_green > 0)
+        else if (world.vmg2_bluecontainer == 0 && world.vmg2_redcontainer > 0 && world.vmg2_greencontainer > 0)
         {
             if (vRandom1 == 0) 
               {  
@@ -107,7 +103,6 @@ public class vehicle extends add_vehicle
                if (vColor == container_red.vmg2_Red && red != null)
                {
                  touchcontainer();
-                 v_red = v_red-1;
                }
               
             }
@@ -118,12 +113,11 @@ public class vehicle extends add_vehicle
                if (vColor == container_green.vmg2_Green && green != null)
                {
                  touchcontainer();
-                 v_green = v_green-1;
                }
               
             }
         }
-        else if (v_blue > 0 && v_red == 0 && v_green > 0)
+        else if (world.vmg2_bluecontainer > 0 && world.vmg2_redcontainer == 0 && world.vmg2_greencontainer > 0)
         {
             if (vRandom1 == 0) 
               {  
@@ -132,7 +126,6 @@ public class vehicle extends add_vehicle
                if (vColor == container_green.vmg2_Green && green != null)
                {
                  touchcontainer();
-                 v_green = v_green-1;
                }
               
             }
@@ -140,44 +133,41 @@ public class vehicle extends add_vehicle
               {
                setImage("Truck_blue.png");
                vColor = "blue";
-                    if (vColor == Container.vmg2_Blue && blue != null)
+                    if (vColor == container_blue.vmg2_Blue && blue != null)
                     {
                      touchcontainer();
-                     v_blue = v_blue-1;
                     } 
             }
         }
-        else if (v_blue > 0 && v_red == 0 && v_green == 0)
+        else if (world.vmg2_bluecontainer > 0 && world.vmg2_redcontainer == 0 && world.vmg2_greencontainer == 0)
         {
                setImage("Truck_blue.png");
                vColor = "blue";
-                    if (vColor == Container.vmg2_Blue && blue != null)
+                    if (vColor == container_blue.vmg2_Blue && blue != null)
                     {
                      touchcontainer();
-                     v_blue = v_blue-1;
                     }   
         }
-        else if (v_blue == 0 && v_red > 0 && v_green == 0)
+        else if (world.vmg2_bluecontainer == 0 && world.vmg2_redcontainer > 0 && world.vmg2_greencontainer == 0)
         {
                setImage("Truck_red.png");
                vColor = "red";
                     if (vColor == container_red.vmg2_Red && red != null)
                     {
                      touchcontainer();
-                     v_red = v_red-1;
                     }   
         }
-        else if (v_blue == 0 && v_red == 0 && v_green > 0)
+        else if (world.vmg2_bluecontainer == 0 && world.vmg2_redcontainer == 0 && world.vmg2_greencontainer > 0)
         {
                setImage("Truck_green.png");
                vColor = "green";
                     if (vColor == container_green.vmg2_Green && green != null)
                     {
                      touchcontainer();
-                     v_green = v_green-1;
                     }   
                 }
       }
+      
      /**
      * If a container touches the vehicle (this actor) it deletes the container from the world.
      */
