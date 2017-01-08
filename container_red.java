@@ -32,9 +32,9 @@ public class container_red extends Mover
         doGravity();
         //c_move();
         mg2_MoveCont();
+        mg2_TouchContainer();
         //mg2_ContCanMove();
-        //System.out.println("Right: " + getOneObjectAtOffset(-image.getWidth()/2,0, null) + " ||Left: " + getOneObjectAtOffset(+image.getWidth()/2,0, null));
-        //System.out.println("Right: " + getOneObjectAtOffset(-image.getWidth()/2,image.getHeight()/2, null) + " ||Left: " + getOneObjectAtOffset(+image.getWidth()/2,image.getHeight()/2, null));
-       // System.out.println("Width: " + image.getWidth() + " ||Height: " + image.getHeight());
+        System.out.println(getOneObjectAtOffset(0,image.getHeight()/2, Mover.class));
+        //System.out.println(abc.getX(),abc.getY()+5));
     }
 }

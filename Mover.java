@@ -28,7 +28,7 @@ public class Mover extends Actor
         MyWorld world = (MyWorld)getWorld();
         if (getOneIntersectingObject(hook.class) != null  &&Greenfoot.isKeyDown("space")) 
         { 
-            setLocation(world.hook.getX(),world.hook.getY()+40);
+            setLocation(world.hook.getX(),world.hook.getY()+100);
         }
     }
 
@@ -38,7 +38,7 @@ public class Mover extends Actor
         GreenfootImage image = getImage(); 
         if (world.hook.vmg2_hooked == true && getOneIntersectingObject(hook.class) != null)
         {
-            setLocation(world.hook.getX(),world.hook.getY()+40);  
+            setLocation(world.hook.getX(),world.hook.getY()+55);  
             //if (getOneObjectAtOffset(+image.getWidth()/2,0, null) == null && getOneObjectAtOffset(-image.getWidth()/2,0, null) == null)
             //{
             //    setLocation(world.hook.getX(),world.hook.getY()+40);  
@@ -103,5 +103,13 @@ public class Mover extends Actor
             vmg2_left = false;
         }
     }
-
+    public void mg2_TouchContainer()
+    {
+        GreenfootImage image = getImage();
+        Actor abc = getOneObjectAtOffset(0,image.getHeight()/2, Mover.class);
+        if (getOneObjectAtOffset(0,image.getHeight()/2, Mover.class) != null)
+        {
+            setLocation(abc.getX(),abc.getY()-image.getHeight());
+        }
+    }
 }

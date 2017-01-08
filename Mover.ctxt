@@ -17,4 +17,6 @@ comment7.params=
 comment7.target=void\ canmove_container()
 comment8.params=
 comment8.target=void\ mg2_ContCanMove()
-numComments=9
+comment9.params=
+comment9.target=void\ mg2_TouchContainer()
+numComments=10

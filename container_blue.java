@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class container_blue extends Mover
 {
+    MyWorld world = (MyWorld)getWorld();
     public static String vmg2_Blue = "blue";
     /**
      * Act - do whatever the container wants to do. This method is called whenever
@@ -17,9 +18,8 @@ public class container_blue extends Mover
     public container_blue()
     {
         GreenfootImage image = getImage();  
-        image.scale(70, 70);
-        setImage(image);
-
+            image.scale(70, 70);
+            setImage(image);
         setGravity(2);
         setMovementSpeed(5);
         setBlockingClasses(new Class[]{container_blue.class});
@@ -31,5 +31,23 @@ public class container_blue extends Mover
         doGravity();
         //c_move();
         mg2_MoveCont();
+        //System.out.println(world.hook.vmg2_hooked);
+        //mg2_setImage();
+    }
+
+    public void mg2_setImage()
+    {
+        if (world.hook.vmg2_hooked == true)
+        {
+            GreenfootImage image = getImage();  
+            image.scale(70, 70);
+            setImage(image);
+        }
+        else
+        {
+            GreenfootImage image = getImage();  
+            image.scale(70, 70);
+            setImage(image);
+        }
     }
 }
