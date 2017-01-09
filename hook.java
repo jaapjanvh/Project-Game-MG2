@@ -34,6 +34,8 @@ public class hook extends Actor
         maxmove();
         mg2_hooked();
         //System.out.println("Red: " + world.vmg2_redcontainer + " ||Blue: " + world.vmg2_bluecontainer + " ||Green: " + world.vmg2_greencontainer);
+        //GreenfootImage image = getImage();
+        //System.out.println(getOneObjectAtOffset(0, image.getHeight()/2, Mover.class));
     }
 
     private void checkInput()

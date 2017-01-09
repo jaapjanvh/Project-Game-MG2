@@ -30,11 +30,8 @@ public class container_red extends Mover
     {
         GreenfootImage image = getImage();
         doGravity();
-        //c_move();
         mg2_MoveCont();
         mg2_TouchContainer();
-        //mg2_ContCanMove();
-        System.out.println(getOneObjectAtOffset(0,image.getHeight()/2, Mover.class));
-        //System.out.println(abc.getX(),abc.getY()+5));
+
     }
 }
